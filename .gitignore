@@ -1,0 +1,12 @@
+bin
+.cache
+.ensime*
+.idea
+*.iml
+*~
+imce.md.package
+project/project
+project/target
+target
+local.*
+gh-pages/
