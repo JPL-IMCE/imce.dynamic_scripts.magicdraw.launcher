@@ -22,12 +22,5 @@ sbt \
     -Dproject.version=$TRAVIS_TAG \
     -DMagicDrawDownloader.progress=false \
     --warn \
-    zipInstall
-
-sbt \
-    -jvm-opts travis/jvmopts.compile \
-    -Dproject.version=$TRAVIS_TAG \
-    -DMagicDrawDownloader.progress=false \
-    --warn \
     publishSigned \
     ghpagesPushSite
