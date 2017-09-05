@@ -128,10 +128,10 @@ object MagicDrawDynamicScriptsLauncher {
         ))
     case Nil =>
       Failure(new IllegalArgumentException(
-        s"No jars match '${prefix}*.jar; there should be exactly 1"))
+        s"No jars match '${prefix}*.jar' in $dir; there should be exactly 1"))
     case jars =>
       Failure(new IllegalArgumentException(
-        jars.mkString(s"Found ${jars.size} jars matching '${prefix}*.jar; there should be only 1!\n", "\n", "\n")))
+        jars.mkString(s"Found ${jars.size} jars matching '${prefix}*.jar' in $dir; there should be only 1!\n", "\n", "\n")))
   }
 
   def resolveFolder(prefix: String, home: Path, relPath: String): Try[Path]
@@ -326,7 +326,7 @@ object MagicDrawDynamicScriptsLauncher {
       ajW <- findSingleJar(ajLib, "aspectjweaver-")
       ajR <- findSingleJar(ajLib, "aspectjrt-")
       scR <- findSingleJar(scLib, "scala-library-")
-      ehAPI <- findSingleJar(iLib, "gov.nasa.jpl.imce.imce.magicdraw.library.enhanced_api_")
+      ehAPI <- findSingleJar(iLib, "imce.magicdraw.library.enhanced_api_")
       plugins <- resolveFolder("DS", home, "plugins")
     } yield DS(home, ajW, ajR, scR, ehAPI, plugins)
   }

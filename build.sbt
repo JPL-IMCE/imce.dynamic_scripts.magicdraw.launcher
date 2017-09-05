@@ -43,6 +43,9 @@ lazy val launcher =
 
       SettingsHelper.makeDeploymentSettings(Universal, packageZipTarball in Universal, "tgz"),
 
+      bashScriptExtraDefines += """addJava "-Dmagicdraw.dynamicScripts.home=$(dirname ${app_home})" """,
+      batScriptExtraDefines += """set _JAVA_OPTS=%_JAVA_OPTS% -Dmagicdraw.dynamicScripts.home=\"%IMCE_DYNAMIC_SCRIPTS_MAGICDRAW_PLUGIN_HOME%\"""",
+
       packagedArtifacts in publishSigned += {
         val p = (packageZipTarball in Universal).value
         val n = (name in Universal).value
