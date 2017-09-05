@@ -3,6 +3,7 @@ import sbt.Keys._
 import sbt._
 import com.typesafe.sbt.packager.SettingsHelper
 import gov.nasa.jpl.imce.sbt._
+import com.typesafe.sbt.pgp.PgpKeys.publishSigned
 
 lazy val thisVersion = SettingKey[String]("this-version", "This Module's version")
 
@@ -42,6 +43,11 @@ lazy val launcher =
 
       SettingsHelper.makeDeploymentSettings(Universal, packageZipTarball in Universal, "tgz"),
 
+      packagedArtifacts in publishSigned += {
+        val p = (packageZipTarball in Universal).value
+        val n = (name in Universal).value
+        Artifact(n, "tgz", "tgz", Some("resource"), Seq(), None, Map()) -> p
+      },
       packagedArtifacts in publish += {
         val p = (packageZipTarball in Universal).value
         val n = (name in Universal).value

@@ -22,4 +22,4 @@ sbt \
     -Dproject.version=$TRAVIS_TAG \
     -DMagicDrawDownloader.progress=false \
     --warn \
-    publishSigned 
+    publish
