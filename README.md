@@ -1,6 +1,7 @@
 # Launcher for IMCE's MagicDraw DynamicScripts Plugin
 
 [![Build Status](https://travis-ci.org/JPL-IMCE/imce.dynamic_scripts.magicdraw.launcher.svg?branch=master)](https://travis-ci.org/JPL-IMCE/imce.dynamic_scripts.magicdraw.launcher)
+[ ![Download](https://api.bintray.com/packages/jpl-imce/gov.nasa.jpl.imce/imce.dynamic_scripts.magicdraw.launcher/images/download.svg) ](https://bintray.com/jpl-imce/gov.nasa.jpl.imce/imce.dynamic_scripts.magicdraw.launcher/_latestVersion)
 
 This launcher application follows the guidelines for
 starting [MagicDraw 18.5](https://docs.nomagic.com/display/MD185/Specifying+batch+mode+program+classpath+and+required+system+properties)
